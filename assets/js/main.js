@@ -225,3 +225,21 @@ playersDropdownList.addEventListener("change", (e) => {
       setPlayerCards();
   }
 });
+
+const flatArray = (arr) => {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    let value = arr[i];
+    if (Array.isArray(value)) {
+      const flattendarray = flatArray(value);
+      for (let j = 0; j < flattendarray.length; j++) {
+        result.push(flattendarray[j]);
+      }
+    } else {
+      result.push(value);
+    }
+  }
+  return result;
+};
+
+console.log(flatArray([1, [2, [3, 4], 5], 6, [[7]]]));
