@@ -250,7 +250,23 @@ const reverseString = (str) => {
     reversed += str[i];
   }
   return reversed;
-}
+};
 
 console.log(reverseString("frontend"));
 
+const isPalindrome = (str) => {
+  let start = 0;
+  let end = str.length - 1;
+  while (start < end) {
+    if (str[start] !== str[end]) {
+      return false; // mismatch found
+    }
+    start++;
+    end--;
+  }
+
+  return true;
+};
+
+console.log(isPalindrome("madam")); // true
+console.log(isPalindrome("hello")); // false
