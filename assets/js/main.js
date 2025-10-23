@@ -270,3 +270,17 @@ const isPalindrome = (str) => {
 
 console.log(isPalindrome("madam")); // true
 console.log(isPalindrome("hello")); // false
+
+function debounce(fn, delay) {
+  let timer; // store timeout id
+
+  return function(...args) {
+    // clear previous timer if function is called again
+    clearTimeout(timer);
+
+    // start a new timer
+    timer = setTimeout(() => {
+      fn.apply(this, args); // call the original function
+    }, delay);
+  };
+}
