@@ -284,3 +284,8 @@ function debounce(fn, delay) {
     }, delay);
   };
 }
+
+const debouncedFn = debounce(() => console.log("API Call"), 1000);
+debouncedFn();
+debouncedFn();
+debouncedFn();
