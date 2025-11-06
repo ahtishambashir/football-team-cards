@@ -274,7 +274,7 @@ console.log(isPalindrome("hello")); // false
 function debounce(fn, delay) {
   let timer; // store timeout id
 
-  return function(...args) {
+  return function (...args) {
     // clear previous timer if function is called again
     clearTimeout(timer);
 
@@ -289,3 +289,13 @@ const debouncedFn = debounce(() => console.log("API Call"), 1000);
 debouncedFn();
 debouncedFn();
 debouncedFn();
+
+const reversedArray = (arr) => {
+  let reversedVar = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    reversedVar.push(arr[i]);
+  }
+  return reversedVar;
+};
+
+console.log(reversedArray([1, 2, 3, 4, 5]));
